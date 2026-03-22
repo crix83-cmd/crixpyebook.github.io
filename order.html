@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place an Order — Crixpy Ebook Store</title>
+  <meta name="description" content="Order your ebook: fill the form, confirm payment via MoMo, and receive your book by email." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+</head>
+<body>
+
+  <!-- ════════════ NAVBAR ════════════ -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">📚</div>
+        <span class="nav-logo-text">Crix<span>py</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="order.html" class="btn btn-primary nav-cta" style="padding:10px 24px;font-size:0.85rem;">Order Now →</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">🏠 Home</a>
+    <a href="order.html">📖 Order</a>
+    <a href="contact.html">📬 Contact</a>
+    <a href="order.html" class="btn btn-primary" style="text-align:center;border-radius:8px;">Order Now →</a>
+  </div>
+
+  <!-- ════════════ PAGE HEADER ════════════ -->
+  <div class="page-header">
+    <div class="page-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Order</span>
+    </div>
+    <h1>📖 Place Your Order</h1>
+    <p>Fill in the form below and we'll send your ebook right to your inbox.</p>
+  </div>
+
+  <!-- ════════════ ORDER SECTION ════════════ -->
+  <section class="order-section">
+    <div class="container">
+      <div class="order-layout">
+
+        <!-- ORDER FORM -->
+        <div class="order-form-wrap">
+          <h2 class="order-form-title">Order Form</h2>
+          <p class="order-form-sub">All fields marked * are required. Your ebook will be sent to the email you provide.</p>
+
+          <form id="orderForm" novalidate>
+
+            <!-- Name & Email -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" placeholder="e.g. Kwame Mensah" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address * <small style="color:var(--blue-500);font-size:0.72rem;">(book sent here)</small></label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+
+            <!-- WhatsApp & Book -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="whatsapp">WhatsApp Number *</label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="e.g. 0244123456" required />
+              </div>
+              <div class="form-group">
+                <label for="bookName">Book Name *</label>
+                <input type="text" id="bookName" name="bookName" placeholder="e.g. Atomic Habits" required />
+              </div>
+            </div>
+
+            <!-- Author -->
+            <div class="form-group">
+              <label for="bookAuthor">Book Author * <small style="color:var(--gray-400);font-size:0.72rem;">(if known)</small></label>
+              <input type="text" id="bookAuthor" name="bookAuthor" placeholder="e.g. James Clear" required />
+            </div>
+
+            <!-- Amount & Transaction ID -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="amount">Amount Paid (GHS) *</label>
+                <input type="text" id="amount" name="amount" placeholder="e.g. 5.00" required />
+              </div>
+              <div class="form-group">
+                <label for="transactionId">Transaction ID * </label>
+                <input type="text" id="transactionId" name="transactionId" placeholder="MoMo transaction ID" required />
+              </div>
+            </div>
+
+            <!-- File Upload -->
+            <div class="form-group">
+              <label>Payment Screenshot <small style="color:var(--gray-400);font-size:0.72rem;">(optional)</small></label>
+              <label class="file-upload-label">
+                <span class="file-upload-icon">📎</span>
+                <span id="fileLabel">Click to upload payment screenshot (optional)</span>
+                <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*,.pdf" />
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-btn">
+              📤 Send Order via WhatsApp
+            </button>
+
+          </form>
+        </div>
+
+        <!-- PAYMENT SIDEBAR -->
+        <aside class="payment-sidebar">
+          <!-- Payment Card -->
+          <div class="payment-card">
+            <div class="payment-card-title">
+              💳 Payment Details
+            </div>
+            <div class="payment-number-box">
+              <div class="payment-number">0542374260</div>
+              <div class="payment-number-label">Mobile Money Number</div>
+            </div>
+            <div class="payment-note">
+              ⚠️ <span>This number is for <strong>payment only</strong>. Please do not call this number.</span>
+              <span>You are to pay exactly <strong>GHS 5.00</strong> per ebook. Your ebook is sent to your email after confirmation. 📩</span>
+              <span>Give us feedback if you have any issues with payment or delivery. We're here to help! 🙌</span>
+            </div>
+
+            <div class="steps-mini" style="margin-top:24px;">
+              <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--blue-700);margin-bottom:16px;">How to Order</div>
+              <div class="step-mini-item">
+                <div class="step-mini-num">1</div>
+                <div>Enter the name and author of the book you want.</div>
+              </div>
+              <div class="step-mini-item">
+                <div class="step-mini-num">2</div>
+                <div>Send payment to MoMo number <strong>0542374260</strong>.</div>
+              </div>
+              <div class="step-mini-item">
+                <div class="step-mini-num">3</div>
+                <div>Fill the order form and submit — it sends to our WhatsApp automatically.</div>
+              </div>
+              <div class="step-mini-item">
+                <div class="step-mini-num">4</div>
+                <div>After confirmation, your ebook is sent to your email. 📩</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp direct -->
+          <div class="payment-card" style="text-align:center;">
+            <div class="payment-card-title" style="justify-content:center;">💬 Prefer to Chat?</div>
+            <p style="font-size:0.85rem;color:var(--gray-600);margin-bottom:16px;">Send us your order directly on WhatsApp and we'll sort you out!</p>
+            <a href="https://wa.me/233593625059" target="_blank" class="wa-btn" style="justify-content:center;">
+              <span class="wa-btn-icon">💬</span>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="nav-logo-text">Crix<span style="color:var(--blue-300);">py</span> Ebook Store</span>
+          <p>Order any ebook online, pay via Mobile Money, and receive it in your email. Simple, fast, and reliable — serving Ghana with pride.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="order.html">Place an Order</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>📱 WhatsApp: 0593625059</p>
+          <p>💳 MoMo: 0542374260</p>
+          <p style="font-size:0.78rem;color:var(--gray-400);margin-top:4px;">MoMo number is for payment only.<br>Please do not call.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Crixpy Ebook Store. Operated by McDallars.</span>
+        <span>Co-authored by <strong style="color:var(--blue-300);">Crix</strong> 🎨</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════ ORDER SUCCESS POPUP ════════════ -->
+  <div class="popup-overlay" id="orderPopup">
+    <div class="popup-box">
+      <div class="popup-icon">✅</div>
+      <h2 class="popup-title">Order Sent!</h2>
+      <p class="popup-text">
+        Your order has been sent successfully via WhatsApp.<br><br>
+        <strong>Your book will be sent to your email after payment confirmation.</strong><br><br>
+        Thank you for choosing Crixpy Ebook Store! 📚
+      </p>
+      <button class="btn btn-primary popup-close" onclick="closePopup('orderPopup')">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
