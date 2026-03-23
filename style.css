@@ -860,22 +860,132 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; line-height: 1.15; }
 }
 
 @media (max-width: 768px) {
+  /* Navbar */
   .nav-links, .nav-cta { display: none; }
-  .hamburger { display: flex; }
-  .hero-inner { padding: 100px 24px 60px; }
+  .hamburger { display: flex; margin-left: auto; }
+  .nav-inner { padding: 0 16px; }
+
+  /* Hero */
+  .hero-inner { padding: 90px 16px 56px; gap: 40px; }
+  .hero-title { font-size: clamp(1.9rem, 7vw, 2.6rem); }
+  .hero-sub { font-size: 0.95rem; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .hero-stat-num { font-size: 1.5rem; }
+  .hero-card { padding: 20px; }
+  .hero-book-item { padding: 12px; }
+  .hero-book-cover { width: 38px; height: 48px; font-size: 1.1rem; }
+
+  /* Section spacing */
+  .how-it-works,
+  .featured-books,
+  .why-us { padding: 72px 0; }
+  .steps-grid,
+  .books-grid,
+  .features-grid { margin-top: 40px; }
+
+  /* Grids → single column */
   .steps-grid { grid-template-columns: 1fr; }
   .books-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr; }
+
+  /* Forms */
   .form-row { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .hero-stats { gap: 24px; }
-  .order-form-wrap, .contact-form-wrap { padding: 24px; }
-  .footer-bottom { justify-content: center; text-align: center; }
+  .order-form-wrap, .contact-form-wrap { padding: 24px 20px; }
+
+  /* Page header */
+  .page-header { padding: 100px 16px 48px; }
+  .page-header h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+
+  /* Order & Contact layout */
+  .order-section, .contact-section { padding: 48px 0 72px; }
+  .payment-sidebar { gap: 16px; }
+  .payment-card { padding: 22px 18px; }
+  .payment-number { font-size: 1.3rem; letter-spacing: 0.03em; }
+
+  /* Contact info */
+  .contact-form-wrap { padding: 24px 20px; }
+  .contact-info-card { padding: 22px 18px; }
+
+  /* CTA banner */
+  .cta-banner { padding: 64px 16px; }
+  .cta-sub { font-size: 0.95rem; }
+
+  /* Footer */
+  .footer { padding: 56px 0 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
+  .footer-bottom { justify-content: center; text-align: center; flex-direction: column; gap: 6px; }
+
+  /* FAQ grid → 1 col on tablet */
+  .faq-card { padding: 22px; }
+
+  /* Toast */
+  .toast { bottom: 16px; right: 16px; left: 16px; max-width: none; }
+
+  /* Container padding */
+  .container { padding: 0 16px; }
 }
 
 @media (max-width: 480px) {
-  .hero-actions { flex-direction: column; }
-  .btn { width: 100%; }
-  .cta-actions { flex-direction: column; align-items: center; }
-  .popup-box { padding: 32px 24px; }
+  /* Navbar */
+  .nav-inner { height: 60px; }
+
+  /* Hero */
+  .hero-inner { padding: 80px 16px 48px; }
+  .hero-title { font-size: clamp(1.7rem, 8vw, 2.2rem); }
+  .hero-actions { flex-direction: column; gap: 10px; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-stats { gap: 16px; }
+  .hero-visual { display: none; } /* hide decorative card on tiny screens */
+
+  /* Buttons — full-width in action groups only */
+  .cta-actions { flex-direction: column; align-items: stretch; }
+  .cta-actions .btn { width: 100%; justify-content: center; }
+
+  /* Forms */
+  .order-form-wrap, .contact-form-wrap { padding: 20px 16px; border-radius: var(--radius-md); }
+  .form-btn { font-size: 0.88rem; padding: 13px 16px; }
+  .form-group input, .form-group textarea, .form-group select { font-size: 16px; } /* prevent iOS zoom */
+
+  /* Order section */
+  .order-section, .contact-section { padding: 32px 0 56px; }
+  .payment-card { padding: 18px 16px; border-radius: var(--radius-md); }
+  .payment-number-box { padding: 18px 12px; }
+  .payment-number { font-size: 1.2rem; }
+
+  /* Page header */
+  .page-header { padding: 84px 16px 40px; }
+  .page-header h1 { font-size: 1.4rem; }
+  .page-header p { font-size: 0.88rem; }
+
+  /* Popup */
+  .popup-box { padding: 32px 20px; border-radius: var(--radius-lg); }
+  .popup-title { font-size: 1.25rem; }
+  .popup-text { font-size: 0.85rem; }
+  .popup-icon { width: 60px; height: 60px; font-size: 1.5rem; }
+
+  /* Step cards */
+  .step-card { padding: 28px 20px; }
+  .feature-card { padding: 24px 20px; }
+
+  /* Book cards */
+  .book-card-cover { height: 150px; }
+
+  /* Section titles */
+  .section-title { font-size: clamp(1.5rem, 6vw, 1.9rem); }
+  .section-sub { font-size: 0.88rem; }
+
+  /* FAQ grid */
+  .faq-card { padding: 18px 16px; }
+  .faq-question { font-size: 0.9rem; }
+
+  /* Footer */
+  .footer { padding: 48px 0 0; }
+  .footer-grid { gap: 24px; padding-bottom: 32px; }
+  .footer-brand p { font-size: 0.82rem; }
+
+  /* Trust strip */
+  .container > div[style*="gap:48px"] { gap: 20px !important; }
+
+  /* WhatsApp button */
+  .wa-btn { font-size: 0.85rem; padding: 12px 16px; }
 }
